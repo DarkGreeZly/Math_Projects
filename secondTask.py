@@ -284,3 +284,30 @@ import matplotlib.pyplot as plt
 # plt.xlabel('X-axis')
 # plt.ylabel('Y-axis')
 # plt.show()
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Generate random data for the scatter plot
+np.random.seed(42)  # Setting seed for reproducibility
+x1 = np.random.rand(50)  # Random x values between 0 and 1
+y1 = np.random.rand(50)  # Random y values between 0 and
+x2 = np.random.rand(50)
+y2 = np.random.rand(50)
+
+# Create a scatter plot
+plt.scatter(x1, y1, marker="^", color='blue', label='Triangles')
+plt.scatter(x2, y2, marker="*", color='red', label='Stars')
+
+
+# Add labels and title
+plt.xlabel('X-axis')
+plt.ylabel('Y-axis')
+plt.title('Scatter Plot Example')
+
+# Add a legend
+plt.legend()
+
+# Show the plot
+plt.show()
+

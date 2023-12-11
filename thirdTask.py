@@ -1,5 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d.art3d import Poly3DCollection
 from mpl_toolkits.mplot3d import Axes3D
 
 #first 3-d figures
@@ -187,61 +188,61 @@ from mpl_toolkits.mplot3d import Axes3D
 #sixth 3-d figure
 
 
-# # Function to generate the surface in polar coordinates
-# def polar_surface(radius, theta):
-#     x = radius * np.cos(theta)
-#     y = radius * np.sin(theta)
-#     z = 3 * np.cos(3 * theta)
-#     return x, y, z
-#
-# # Function to generate the filled contour surface
-# def filled_contour_surface(x, y, z):
-#     return (x**2 / 9) - (y**2 / 4) + (z**2 / 16)
-#
-# # Create a 3D figure with three subplots
-# fig = plt.figure(figsize=(15, 5))
-#
-# # First subplot: Wireframe surface plot
-# ax1 = fig.add_subplot(131, projection='3d')
-# theta1 = np.linspace(0, 2 * np.pi, 100)
-# radius1 = np.linspace(0, 5, 100)
-# Theta1, Radius1 = np.meshgrid(theta1, radius1)
-# X1, Y1, Z1 = polar_surface(Radius1, Theta1)
-# ax1.plot_wireframe(X1, Y1, Z1, color='blue', label='Wireframe Surface')
-# ax1.set_xlabel('X-axis')
-# ax1.set_ylabel('Y-axis')
-# ax1.set_zlabel('Z-axis')
-# ax1.set_title('Wireframe Surface Plot')
-# ax1.legend()
-#
-# # Second subplot: Scattered surface plot (modify based on your data)
-# ax2 = fig.add_subplot(132, projection='3d')
-# x2 = np.random.rand(50)
-# y2 = np.random.rand(50)
-# z2 = np.random.rand(50)
-# ax2.scatter(x2, y2, z2, color='green', label='Scattered Surface')
-# ax2.set_xlabel('X-axis')
-# ax2.set_ylabel('Y-axis')
-# ax2.set_zlabel('Z-axis')
-# ax2.set_title('Scattered Surface Plot')
-# ax2.legend()
-#
-# # Third subplot: Filled contour plot in polar coordinates
-# ax3 = fig.add_subplot(133, projection='3d')
-# theta3 = np.linspace(0, 2 * np.pi, 100)
-# radius3 = np.linspace(0, 5, 100)
-# Theta3, Radius3 = np.meshgrid(theta3, radius3)
-# X3, Y3, Z3 = polar_surface(Radius3, Theta3)
-# contour_data = filled_contour_surface(X3, Y3, Z3)
-# contour = ax3.contourf(X3, Y3, Z3, contour_data, cmap='viridis', levels=20, alpha=0.7)
-# ax3.set_xlabel('X-axis')
-# ax3.set_ylabel('Y-axis')
-# ax3.set_zlabel('Z-axis')
-# ax3.set_title('Filled Contour Plot in Polar Coordinates')
-# fig.colorbar(contour, ax=ax3, label='Contour Levels')
-#
-# # Adjust layout for better visualization
-# plt.tight_layout()
-#
-# # Show the plot
-# plt.show()
+# Function to generate the surface in polar coordinates
+def polar_surface(radius, theta):
+    x = radius * np.cos(theta)
+    y = radius * np.sin(theta)
+    z = 3 * np.cos(3 * theta)
+    return x, y, z
+
+# Function to generate the filled contour surface
+def filled_contour_surface(x, y, z):
+    return (x**2 / 9) - (y**2 / 4) + (z**2 / 16)
+
+# Create a 3D figure with three subplots
+fig = plt.figure(figsize=(15, 5))
+
+# First subplot: Wireframe surface plot
+ax1 = fig.add_subplot(131, projection='3d')
+theta1 = np.linspace(0, 2 * np.pi, 100)
+radius1 = np.linspace(0, 5, 100)
+Theta1, Radius1 = np.meshgrid(theta1, radius1)
+X1, Y1, Z1 = polar_surface(Radius1, Theta1)
+ax1.plot_wireframe(X1, Y1, Z1, color='blue', label='Wireframe Surface')
+ax1.set_xlabel('X-axis')
+ax1.set_ylabel('Y-axis')
+ax1.set_zlabel('Z-axis')
+ax1.set_title('Wireframe Surface Plot')
+ax1.legend()
+
+# Second subplot: Scattered surface plot (modify based on your data)
+ax2 = fig.add_subplot(132, projection='3d')
+x2 = np.random.rand(50)
+y2 = np.random.rand(50)
+z2 = np.random.rand(50)
+ax2.scatter(x2, y2, z2, color='green', label='Scattered Surface')
+ax2.set_xlabel('X-axis')
+ax2.set_ylabel('Y-axis')
+ax2.set_zlabel('Z-axis')
+ax2.set_title('Scattered Surface Plot')
+ax2.legend()
+
+# Third subplot: Filled contour plot in polar coordinates
+ax3 = fig.add_subplot(133, projection='3d')
+theta3 = np.linspace(0, 2 * np.pi, 100)
+radius3 = np.linspace(0, 5, 100)
+Theta3, Radius3 = np.meshgrid(theta3, radius3)
+X3, Y3, Z3 = polar_surface(Radius3, Theta3)
+contour_data = filled_contour_surface(X3, Y3, Z3)
+contour = ax3.contourf(X3, Y3, Z3, contour_data, cmap='viridis', levels=20, alpha=0.7)
+ax3.set_xlabel('X-axis')
+ax3.set_ylabel('Y-axis')
+ax3.set_zlabel('Z-axis')
+ax3.set_title('Filled Contour Plot in Polar Coordinates')
+fig.colorbar(contour, ax=ax3, label='Contour Levels')
+
+# Adjust layout for better visualization
+plt.tight_layout()
+
+# Show the plot
+plt.show()

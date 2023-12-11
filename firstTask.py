@@ -46,7 +46,7 @@ import numpy as np
 
 #third equation
 
-# # Given matrix
+# Given matrix
 # matrix = np.array([[-2, 3, 2, 1, 3],
 #                    [1, -2, 1, -1, 0],
 #                    [3, 1, -1, 0, -1],
@@ -123,6 +123,21 @@ import numpy as np
 
 #fifth equation
 
+# import sympy as sp
+# import math
+#
+# a=sp.Symbol('a')
+# b=sp.Symbol('b')
+#
+# X = sp.expand((3*a+2*b)*(-a-3*b))
+# X=X.evalf(subs={a:math.sqrt(3),b:1,a*b:math.cos(math.pi/6)})
+# print("Result:")
+# print(round(X,2))
+
+# X1 = sp.expand(sp.sqrt((2*a-b)**2))
+# X1 = X1.evalf(subs={a:math.sqrt(3),b:1,a*b:math.cos(math.pi/6)})
+# print("Result: ")
+# print(round(X1,2))
 # # Define vectors a and b
 # a = np.array([1, 2, 3])  # Replace a1, a2, a3 with actual components of vector a
 # b = np.array([4, 5, 6])  # Replace b1, b2, b3 with actual components of vector b
